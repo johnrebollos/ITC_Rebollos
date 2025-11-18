@@ -18,13 +18,9 @@ function pay(){
   let rate = Number(document.getElementById("r").value);
 
   let gross = hours * rate;
-  let deduct = gross * 0.10;
-  let net = gross - deduct;
 
   document.getElementById("out").innerHTML =
-    "Gross Salary: " + gross +
-    "<br>Deduction: " + deduct +
-    "<br>Net Salary: " + net;
+    "Gross Salary: " + gross;
 }
 </script>
 
