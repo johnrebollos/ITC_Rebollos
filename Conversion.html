@@ -27,25 +27,29 @@
 <p><a href="index.html">Back to Home Page</a></p>
 
 <script>
-function convertCF(){
+function convertCF()
+{
   let c = document.getElementById("c").value;
   let res = (c * 9/5) + 32;
   document.getElementById("CF").innerHTML = res;
 }
 
-function convertFC(){
+function convertFC()
+{
   let f = document.getElementById("f").value;
   let res = (f - 32) * 5/9;
   document.getElementById("FC").innerHTML = res;
 }
 
-function convertMF(){
+function convertMF()
+{
   let m = document.getElementById("m").value;
   let res = m * 3.28084;
   document.getElementById("MF").innerHTML = res;
 }
 
-function convertFM(){
+function convertFM()
+{
   let ft = document.getElementById("ft").value;
   let res = ft * 0.3048;
   document.getElementById("FM").innerHTML = res;
