@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Factorial (While Loop), Sum (Do While Loop) and Average (For Loop) of First N Natural Numbers</h3>
+
+Enter: <input id="num" type="number">
+<button onclick="compute()">Compute</button>
+
+<p id="f"></p>
+<p id="s"></p>
+<p id="a"></p>
+
+<p><a href="index.html">Back to Home Page</a></p>
+
+<script>
+function compute(){
+  let n = Number(document.getElementById("num").value);
+
+  // factorial
+  let fact = 1;
+  let i = n;
+  while(i > 1)
+  {
+    fact = fact * i;
+    i--;
+  }
+
+  // sum
+  let sum = 0;
+  let j = 1;
+  do
+  {
+    sum = sum + j;
+    j++;
+  }
+  while(j <= n);
+
+  // average
+  let total = 0;
+  for(let k=1; k<=n; k++)
+  {
+    total += k;
+  }
+  let avg = total / n;
+
+  document.getElementById("f").innerHTML = "Factorial: " + fact;
+  document.getElementById("s").innerHTML = "Sum: " + sum;
+  document.getElementById("a").innerHTML = "Average: " + avg;
+}
+</script>
+
+</body>
+</html>
