@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Income Tax Calculator</h1>
+
+<input id="sal" type="number">
+<button onclick="tax()">Compute</button>
+
+<p id="out"></p>
+
+<p><a href="index.html">Back to Home Page</a></p>
+
+<script>
+function tax()
+{
+  let s = Number(document.getElementById("sal").value);
+  let t = 0;
+
+  if(s <= 250000)
+  {
+    t = 0;
+  } 
+  else if(s <= 400000)
+  {
+    t = (s - 250000) * 0.20;
+  } 
+  else if(s <= 800000)
+  {
+    t = 30000 + (s - 400000) * 0.25;
+  } 
+  else if(s <= 2000000)
+  {
+    t = 130000 + (s - 800000) * 0.30;
+  } 
+  else 
+  {
+    t = 490000 + (s - 2000000) * 0.32;
+  }
+  document.getElementById("out").innerHTML = "Tax: " + t;
+}
+</script>
+
+</body>
+</html>
