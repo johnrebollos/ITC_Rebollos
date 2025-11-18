@@ -4,41 +4,52 @@
 
 <h1>Income Tax Calculator</h1>
 
-<input id="sal" type="number">
-<button onclick="tax()">Compute</button>
+<input id="monthly" type="number">
+<button id="btnCompute">Compute</button>
 
-<p id="out"></p>
+<p>Annual Income: <span id="annualIncome">0</span></p>
+<p>Annual Tax: <span id="annualTax">0</span></p>
+<p>Monthly Tax: <span id="monthlyTax">0</span></p>
 
 <p><a href="index.html">Back to Home Page</a></p>
 
 <script>
-function tax()
-{
-  let s = Number(document.getElementById("sal").value);
-  let t = 0;
+document.getElementById("btnCompute").addEventListener("click", () => 
+  {
+    var monthly = parseFloat(document.getElementById("monthly").value);
+    if(isNaN(monthly) || monthly < 0) 
+    return;
 
-  if(s <= 250000)
-  {
-    t = 0;
-  } 
-  else if(s <= 400000)
-  {
-    t = (s - 250000) * 0.20;
-  } 
-  else if(s <= 800000)
-  {
-    t = 30000 + (s - 400000) * 0.25;
-  } 
-  else if(s <= 2000000)
-  {
-    t = 130000 + (s - 800000) * 0.30;
-  } 
-  else 
-  {
-    t = 490000 + (s - 2000000) * 0.32;
-  }
-  document.getElementById("out").innerHTML = "Tax: " + t;
-}
+    var annual = monthly * 12;
+    var tax = 0;
+
+    if(annual <= 250000) 
+    {
+        tax = 0;
+    } 
+    else if(annual <= 400000) 
+    {
+        tax = (annual - 250000) * 0.2;
+    } 
+    else if(annual <= 800000) 
+    {
+        tax = 30000 + (annual - 400000) * 0.25;
+    } 
+    else if(annual <= 2000000) 
+    {
+        tax = 130000 + (annual - 800000) * 0.3;
+    } 
+    else 
+    {
+        tax = 490000 + (annual - 2000000) * 0.32;
+    }
+
+    var monthlyTax = tax / 12;
+
+    document.getElementById("annualIncome").textContent = annual.toFixed(2);
+    document.getElementById("annualTax").textContent = tax.toFixed(2);
+    document.getElementById("monthlyTax").textContent = monthlyTax.toFixed(2);
+});
 </script>
 
 </body>
