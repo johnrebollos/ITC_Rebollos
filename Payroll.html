@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Simple Payroll</h1>
+
+Hours Worked: <input id="h" type="number">
+Rate Per Hour: <input id="r" type="number">
+<button onclick="pay()">Compute</button>
+
+<p id="out"></p>
+
+<p><a href="index.html">Back to Home Page</a></p>
+
+<script>
+function pay(){
+  let hours = Number(document.getElementById("h").value);
+  let rate = Number(document.getElementById("r").value);
+
+  let gross = hours * rate;
+  let deduct = gross * 0.10;
+  let net = gross - deduct;
+
+  document.getElementById("out").innerHTML =
+    "Gross Salary: " + gross +
+    "<br>Deduction: " + deduct +
+    "<br>Net Salary: " + net;
+}
+</script>
+
+</body>
+</html>
