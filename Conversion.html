@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Conversion</h1>
+
+<p>Celsius to Fahrenheit</p>
+<input id="c" type="number">
+<button onclick="convertCF()">Convert</button>
+<p id="CF"></p>
+
+<p>Fahrenheit to Celsius</p>
+<input id="f" type="number">
+<button onclick="convertFC()">Convert</button>
+<p id="FC"></p>
+
+<p>Meters to Feet</p>
+<input id="m" type="number">
+<button onclick="convertMF()">Convert</button>
+<p id="MF"></p>
+
+<p>Feet to Meters</p>
+<input id="ft" type="number">
+<button onclick="convertFM()">Convert</button>
+<p id="FM"></p>
+
+<script>
+function convertCF(){
+  let c = document.getElementById("c").value;
+  let res = (c * 9/5) + 32;
+  document.getElementById("CF").innerHTML = res;
+}
+
+function convertFC(){
+  let f = document.getElementById("f").value;
+  let res = (f - 32) * 5/9;
+  document.getElementById("FC").innerHTML = res;
+}
+
+function convertMF(){
+  let m = document.getElementById("m").value;
+  let res = m * 3.28084;
+  document.getElementById("MF").innerHTML = res;
+}
+
+function convertFM(){
+  let ft = document.getElementById("ft").value;
+  let res = ft * 0.3048;
+  document.getElementById("FM").innerHTML = res;
+}
+</script>
+
+</body>
+</html>
